@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes/constVar.dart';
 import 'package:notes/homeTitle.dart';
+import 'package:notes/notePage.dart';
 import 'package:notes/notesContainer.dart';
 
 // ignore: camel_case_types
@@ -12,6 +13,11 @@ class home extends StatelessWidget {
   
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {
+        'home':(context) => home(),
+        'notePage':(context) => notePage(),
+        
+      },
       home: SafeArea(
         child: DecoratedBox(
           decoration: const BoxDecoration(
@@ -30,7 +36,8 @@ class home extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 16),
                       child: notesContainer(),
                     ),),
-                )
+                ),
+                FloatingActionButton(onPressed: () => null,)
               ],
             ),
           ),
