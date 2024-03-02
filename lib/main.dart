@@ -2,5 +2,5 @@ import 'package:flutter/material.dart';
 import 'package:notes/home.dart';
 
 void main() {
-  runApp(home());
+  runApp(const home());
 }
