@@ -7,10 +7,7 @@ class notesContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector
-    (
-      onTap: () => Navigator.of(context).pushNamed('notePage'),
-      child: Container(
+    return Container(
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 197, 185, 213),
           borderRadius: BorderRadius.circular(10),
@@ -23,40 +20,39 @@ class notesContainer extends StatelessWidget {
               padding: const EdgeInsets.only(top: 12),
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 28,
                   ),
-                  Text(
+                  const Text(
                     'Title ...',
                     style: TextStyle(fontSize: 24),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 185,
                   ),
                   IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.delete,
                         size: 28,
                       ))
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 12, left: 20, bottom: 65),
+            const Padding(
+              padding: EdgeInsets.only(top: 12, left: 20, bottom: 65),
               child: Text(
                 'body .........................',
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 230),
+            const Padding(
+              padding: EdgeInsets.only(left: 230),
               child: Text(
                 'date 2000/10/4',
               ),
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }
