@@ -19,8 +19,8 @@ class myApp extends StatelessWidget
     return   GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: [
-        GetPage(name: 'home', page: () => home(),),
-          GetPage(name: 'notePage', page: () => notePage(),)
+        GetPage(name: '/home', page: () => home(),),
+          GetPage(name: '/notePage', page: () => notePage(),)
         
       ],
         home: SafeArea(child: home(),));
