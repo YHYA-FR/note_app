@@ -8,7 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 void main()async {
   await Hive.initFlutter();
   Hive.registerAdapter(noteModleAdapter());
-  await Hive.openBox('testBox');
+  await Hive.openBox('notes');
   runApp(const myApp());
 }
 
@@ -29,5 +29,5 @@ class myApp extends StatelessWidget
       ],
         home: SafeArea(child: home(),));
   }
-  
+
 }
