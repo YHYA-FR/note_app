@@ -6,6 +6,8 @@ part of 'note_modle.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
+
+
 class noteModleAdapter extends TypeAdapter<noteModle> {
   @override
   final int typeId = 0;

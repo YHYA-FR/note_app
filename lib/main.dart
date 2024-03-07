@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:notes/modle/note_modle.dart';
 import 'package:notes/view/home.dart';
 import 'package:notes/view/notePage.dart';
-
-void main() {
+import 'package:hive_flutter/hive_flutter.dart';
+void main()async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(noteModleAdapter());
+  await Hive.openBox('testBox');
   runApp(const myApp());
 }
 

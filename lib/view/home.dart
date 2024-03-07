@@ -21,7 +21,7 @@ class home extends StatelessWidget {
           children: [
             titlePage('NOTES', Icons.search, 180),
             SizedBox(
-              height: MediaQuery.sizeOf(context).height / 1.14,
+              height: MediaQuery.sizeOf(context).height / 1.15,
               width: MediaQuery.sizeOf(context).width / 1.1,
               child: ListView.builder(
                 itemBuilder: (context, index) =>  Padding(
