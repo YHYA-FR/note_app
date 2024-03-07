@@ -14,7 +14,7 @@ noteModle note;
           color:Color(note.color),
           borderRadius: BorderRadius.circular(10),
         ),
-        height: MediaQuery.sizeOf(context).height / 4.7,
+        height: MediaQuery.sizeOf(context).height / 4.5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,12 +25,17 @@ noteModle note;
                   const SizedBox(
                     width: 28,
                   ),
-                   Text(
-                    note.title,
-                    style: const TextStyle(fontSize: 24),
+                   SizedBox(
+                       width: 200,
+                     height: 30,
+                     child: Text(
+                       overflow: TextOverflow.clip,
+                      note.title,
+                      style: const TextStyle(fontSize: 24),
                   ),
+                   ),
                   const SizedBox(
-                    width: 185,
+                    width: 85,
                   ),
                   IconButton(
                       onPressed: () {},
@@ -42,13 +47,17 @@ noteModle note;
               ),
             ),
              Padding(
-              padding: const EdgeInsets.only(top: 12, left: 20, bottom: 65),
-              child: Text(
-                note.body,
+              padding: const EdgeInsets.only(top: 4, left: 20),
+              child: SizedBox(
+                height: 100,
+                width: 250,
+                child: Text(
+                  note.body,
+                ),
               ),
             ),
              Padding(
-              padding: const EdgeInsets.only(left: 230),
+              padding: const EdgeInsets.only(left: 150),
               child: Text(
                 note.date,
               ),
