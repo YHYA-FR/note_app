@@ -56,7 +56,7 @@ class home extends StatelessWidget {
                   Container(
                     height: MediaQuery.sizeOf(context).height / 1.8,
                     decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Color.fromARGB(255, 49, 183, 168),
                     ),
                     child: AddNoteForm(c: c),
                   ),

@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:get/get.dart';
 import 'package:notes/companent/customBotton.dart';
 import 'package:notes/companent/textFieldBody.dart';
 import 'package:notes/companent/textFieldtitle.dart';
@@ -26,7 +28,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   String? title;
   String? body;
   noteModle? note;
-
+  Color color =Colors.black87;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -45,7 +47,40 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 90),
+            padding: const EdgeInsets.only(top: 9),
+            child: costomBotton(
+              buttonText: 'pick color',
+              bottonColor: Color.fromARGB(255, 142, 74, 190),
+              shadow: Color.fromARGB(255, 141, 97, 211),
+              ontap: () {
+                Get.dialog(
+
+                  Material(
+                    color: Colors.white38,
+
+                    child: Container(
+                      height: 200,
+                      child: SingleChildScrollView(
+                      child: ColorPicker(
+
+                        onColorChanged:(value) {
+                          color=value;
+                          print(value);
+                        },
+                        pickerColor: Color(0xfffffff),
+                        paletteType: PaletteType.hueWheel,
+                      ),
+                ),
+                    ),
+                  ),
+
+                );
+
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 19),
             child: costomBotton(
               buttonText: 'Create',
               bottonColor: Color.fromARGB(255, 142, 74, 190),
@@ -53,10 +88,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
               ontap: () {
                 if (globalKey.currentState!.validate()) {
                   globalKey.currentState!.save();
+
                   widget.c.addNote(
                     noteModle(
                         body: body!,
-                        color: Colors.purple.value,
+                        color: color.value,
                         date: DateTime.now().toString(),
                         title: title!),
                   );
