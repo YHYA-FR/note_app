@@ -53,28 +53,22 @@ class _AddNoteFormState extends State<AddNoteForm> {
               bottonColor: Color.fromARGB(255, 142, 74, 190),
               shadow: Color.fromARGB(255, 141, 97, 211),
               ontap: () {
-                Get.dialog(
+                Get.defaultDialog(
+                  title: 'pick color',
+                  backgroundColor: Colors.white38,
+                  content: SingleChildScrollView(
+                        child: ColorPicker(
 
-                  Material(
-                    color: Colors.white38,
-
-                    child: Container(
-                      height: 200,
-                      child: SingleChildScrollView(
-                      child: ColorPicker(
-
-                        onColorChanged:(value) {
-                          color=value;
-                          print(value);
-                        },
-                        pickerColor: Color(0xfffffff),
-                        paletteType: PaletteType.hueWheel,
-                      ),
-                ),
+                          onColorChanged:(value) {
+                            color=value;
+                            print(value);
+                          },
+                          pickerColor: Color(0xfffffff),
+                          paletteType: PaletteType.hueWheel,
+                        ),
                     ),
-                  ),
-
                 );
+
 
               },
             ),

@@ -35,7 +35,7 @@ class home extends StatelessWidget {
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   child: GestureDetector(
-                    child: notesContainer(note: notes[index]),
+                    child: notesContainer(note: notes[index],index: index),
                     onTap: () {
                       Get.toNamed('notePage');
                     },

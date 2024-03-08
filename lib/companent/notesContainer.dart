@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:notes/modle/note_modle.dart';
 
 class notesContainer extends StatelessWidget {
-   notesContainer({
+   const notesContainer({
     super.key,
-    required this.note
+    required this.note,
+     required this.index,
   });
-noteModle note;
+final noteModle note;
+final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +41,9 @@ noteModle note;
                     width: 85,
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Hive.box('notes').deleteAt(index);
+                      },
                       icon: const Icon(
                         Icons.delete,
                         size: 28,
