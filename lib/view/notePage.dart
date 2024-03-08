@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:notes/constVar.dart';
 import 'package:notes/companent/homeTitle.dart';
+import 'package:notes/modle/note_modle.dart';
 
 class notePage extends StatelessWidget {
+  var titleController =TextEditingController( );
+  var bodyController =TextEditingController( );
   @override
   Widget build(BuildContext context) {
+    noteModle data=Get.arguments;
+    titleController.text=data.title;
+    bodyController.text=data.body;
     return SafeArea(
       child: DecoratedBox(
         decoration: const BoxDecoration(
@@ -19,6 +26,7 @@ class notePage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 36),
                 child: TextField(
+                  controller: titleController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -46,6 +54,7 @@ class notePage extends StatelessWidget {
                 child: SizedBox(
                   height: 220,
                   child: TextField(
+                    controller: bodyController,
                     maxLines: null,
                     expands: true,
                     keyboardType: TextInputType.multiline,

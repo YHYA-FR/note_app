@@ -17,7 +17,7 @@ class home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = Get.put(addNoteController());
-    List<dynamic>? notes = c.getAllNotes() != null ? c.getAllNotes() : [];
+    List<dynamic>? notes = c.getAllNotes() ?? [];
     return DecoratedBox(
       decoration: const BoxDecoration(
         gradient: linearGradient,
@@ -37,7 +37,7 @@ class home extends StatelessWidget {
                   child: GestureDetector(
                     child: notesContainer(note: notes[index],index: index),
                     onTap: () {
-                      Get.toNamed('notePage');
+                      Get.toNamed('notePage',arguments: notes[index]);
                     },
                   ),
                 ),

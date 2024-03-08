@@ -7,6 +7,7 @@ import 'package:notes/companent/customBotton.dart';
 import 'package:notes/companent/textFieldBody.dart';
 import 'package:notes/companent/textFieldtitle.dart';
 import 'package:notes/controller/addNoteController.dart';
+import 'package:notes/helper/helper.dart';
 import 'package:notes/modle/note_modle.dart';
 
 class AddNoteForm extends StatefulWidget {
@@ -47,7 +48,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 9),
+            padding: const EdgeInsets.only(top: 2),
             child: costomBotton(
               buttonText: 'pick color',
               bottonColor: Color.fromARGB(255, 142, 74, 190),
@@ -87,7 +88,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     noteModle(
                         body: body!,
                         color: color.value,
-                        date: DateTime.now().toString(),
+                        date: HelperFunc().formatDate(DateTime.now()).toString(),
                         title: title!),
                   );
                 } else {
